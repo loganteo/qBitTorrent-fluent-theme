@@ -7,7 +7,7 @@ QDockWidget {
 QWidget {
     border-color: rgba(255, 255, 255, 8);
     background-color: #202020; 
-    font-family: "Segoe UI Variable Regular Text", "Microsoft Yahei", "Microsoft JhengHei", sans-serif;
+    font-family: "Segoe UI Variable Regular Text", sans-serif;
     font-size: 13px;
     border-radius: 5px;
 }
@@ -128,9 +128,7 @@ QMenuBar::item:pressed {
 
 QMenu {
     background-color: #202020;
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 1px;
+    padding: 4px 3px;
     border: 1px solid rgba(255, 255, 255, 8);
     border-radius: 0px;
 }
@@ -147,11 +145,10 @@ QMenu::separator {
 
 QMenu::item {
     background-color: transparent;
-    padding: 5px 15px;
+    padding: 5px 10px;
     border-radius: 5px;
     min-width: 60px;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    margin: 1px 0;
 }
 
 QMenu::item:selected {
@@ -231,8 +228,9 @@ QListView::icon {
 
 QListView::item {
     padding-top: 5px;
-    padding-bottom: 5px; 
-    margin-bottom: 5px;
+    padding-bottom: 5px;
+    margin-right: 7px; 
+    margin-bottom: 2px; 
     border-radius: 5px;
 }
 
@@ -253,35 +251,48 @@ QTreeView {
     color: #ffffff;
     outline: 0;
     selection-background-color: rgba(255, 255, 255, 100);
+    show-decoration-selected: 0;
 }
 
 QTreeView::indicator,
 QTreeView::icon {
-    margin: 6px; 
+    margin: 6px;
 }
 
 QTreeView::item {
     color: #ffffff;
     min-width: 60px;
     padding: 3px 4px;
+    margin-right: 7px; 
+    margin-bottom: 2px; 
     background-color: transparent;
     outline: 0;
 }
 
+QTreeView::item:first {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+QTreeView::item:last {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 QTreeView::item:hover,
 QTreeView::item:focus {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #303030;
     outline: 0;
 }
 
 QTreeView::item:selected {
     color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #2a2a2a;
     outline: 0;
 }
 
 QTreeView::item:selected:active {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #303030;
     outline: 0;
 }
 
@@ -307,7 +318,7 @@ QCheckBox::branch:has-children:open {
 
 /*HEADERVIEW*/
 QHeaderView {
-    font-family: "Segoe UI Variable Regular Small", "Microsoft Yahei", "Microsoft JhengHei", sans-serif;
+    font-family: "Segoe UI Variable Regular Small", sans-serif;
     font-size: 12px;
     background-color: transparent; 
     text-align: center;
@@ -317,37 +328,46 @@ QHeaderView {
 QHeaderView::section {
     background-color: rgba(255, 255, 255, 0.05);
     color: #d8d8d8;
-    padding: 4px;
-    padding-left: 8px;
-    padding-right: 20px;
+    padding: 4px 6px;
+    margin-bottom: 3px;
     border-radius: 0;
+}
+
+QHeaderView::section:first {
+    padding-left: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+QHeaderView::section:last {
+    padding-right: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 QHeaderView::section:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    /* smaller hover highlight */
+    /* margin: 3px;
+    padding: 3px;
+    border-radius: 5px; */
 }
 
-QHeaderView::up-arrow {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-right: 5px;
-    width: 19px;
-    height: 13px;
-}
-
+QHeaderView::up-arrow,
 QHeaderView::down-arrow {
-    margin-bottom: 4px;
-    margin-right: 5px;
+    padding-left: 0;
+    padding-bottom: 4px;
+    margin: 0 4px 0 -14px;
     width: 19px;
     height: 13px;
 }
 
 QHeaderView::up-arrow {
-    image: url(:/uitheme/controls/dark/SpinBoxDown.svg); 
-}
-
-QHeaderView::down-arrow {
     image: url(:/uitheme/controls/dark/SpinBoxUp.svg);
+}
+
+QHeaderView::down-arrow {
+    image: url(:/uitheme/controls/dark/SpinBoxDown.svg);
 }
 
 /*TABWIDGET*/
@@ -1067,7 +1087,7 @@ QCheckBox::indicator,
 QTreeView::indicator {
     width: 15px;
     height: 15px;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 1px solid #606060;
     background-color: rgba(255, 255, 255, 0);
     margin-right: 5px;
