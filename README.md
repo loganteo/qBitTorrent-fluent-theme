@@ -1,5 +1,3 @@
-# I'm no longer working on this project, but you can still submit pull requests if you’ve found a solution to any issues
-
 # Fluent theme for qBitTorrent
 Fluent dark/light themes for qBitTorrent!  
 
@@ -31,4 +29,5 @@ If you want the theme to work correctly use these settings:
 
 ##### Note: In case you find that MicaForEveryone app is making other unwanted changes to your PC's look and feel, simply go to all other rules listed and select Default in drop-down menu for all options given and toggle other options to Off.
 ##### In case mica themes act like normal themes after computer restarts, make sure to toggle on `Run on Startup` setting in `General` tab
+
 
